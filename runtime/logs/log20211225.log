@@ -1,3 +1,0 @@
-[INFO][order.go:30]2021/12/25 18:01:02 [Key: 'OrderGetService.UserID' Error:Field validation for 'UserID' failed on the 'required' tag]
-[INFO][order.go:30]2021/12/25 18:04:17 [Key: 'OrderGetService.UserID' Error:Field validation for 'UserID' failed on the 'required' tag]
-[INFO][order.go:30]2021/12/25 18:04:20 [Key: 'OrderGetService.UserID' Error:Field validation for 'UserID' failed on the 'required' tag]

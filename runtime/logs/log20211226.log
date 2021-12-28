@@ -1,7 +1,0 @@
-[INFO][order_detail.go:22]2021/12/26 12:23:43 [record not found]
-[INFO][order_detail.go:22]2021/12/26 12:23:45 [record not found]
-[INFO][order_detail.go:22]2021/12/26 12:25:08 [record not found]
-[INFO][order_detail.go:24]2021/12/26 12:55:26 [record not found]
-[INFO][order_detail.go:23]2021/12/26 12:56:37 [record not found]
-[INFO][user_info.go:17]2021/12/26 16:53:28 [Key: 'UserInfoGetService.UserID' Error:Field validation for 'UserID' failed on the 'required' tag]
-[INFO][order.go:18]2021/12/26 17:20:38 [json: cannot unmarshal string into Go struct field OrderCreateService.weight of type int]

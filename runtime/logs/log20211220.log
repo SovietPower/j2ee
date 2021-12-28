@@ -1,5 +1,0 @@
-[INFO][config.go:18]2021/12/20 13:44:15 [open conf/locales/zh-cn.yaml: The system cannot find the path specified.]
-[INFO][user_login.go:37]2021/12/20 19:42:08 [record not found]
-[INFO][user_login.go:37]2021/12/20 19:47:39 [record not found]
-[INFO][user_login.go:37]2021/12/20 19:47:46 [record not found]
-[INFO][user_login.go:37]2021/12/20 19:49:31 [record not found]
