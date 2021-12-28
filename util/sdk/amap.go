@@ -1,3 +1,4 @@
+// 高德地图API：获取下级行政区
 package sdk
 
 import (
@@ -35,7 +36,6 @@ func (service GetDistrictsService) GetDistricts() serializer.Response {
 	code := constant.SUCCESS
 
 	url := "http://restapi.amap.com/v3/config/district?key=" + KEY + "&keywords=" + service.Keyword + "&subdistrict=1&extensions=base"
-	println(url)
 
 	resp, err := http.Get(url)
 	if err != nil {

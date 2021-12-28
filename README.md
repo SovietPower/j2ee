@@ -12,6 +12,17 @@
 - godotenv
 - jwt-go
 
+
+## 运行
+
+需先创建`.env`文件，填写数据库、使用的密钥等信息，内容格式同`.env.example`。
+
+```
+go mod tidy
+go run main.go
+```
+
+运行在`8080`端口。
 ## 目录结构
 ```
 ├─api 服务调用接口
@@ -27,15 +38,5 @@
 ├─service 处理服务
 └─util 工具
     └─logging 日志工具
+    └─sdk 第三方服务
 ```
-
-## 运行
-
-需先创建`.env`文件，填写数据库、使用的密钥等信息，内容格式同`.env.example`。
-
-```
-go mod tidy
-go run main.go
-```
-
-运行在`8080`端口。

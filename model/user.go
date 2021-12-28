@@ -13,7 +13,7 @@ type User struct {
 
 	Status    int // 状态。0：正常，1：限制功能，2：封禁
 	Authority int // 权限。0：管理员，1：普通用户
-	// Email     string `gorm:"unique"`
+
 	// Avatar    string
 }
 
