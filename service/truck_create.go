@@ -47,6 +47,25 @@ func (service *TruckCreateService) TruckCreate() serializer.Response {
 		}
 	}
 
+	// 管理员信息更新
+	adminInfo := AdminInfoUpdateService{
+		DMsgNumber:      0,
+		DOrderTotal:     0,
+		DUserTotal:      0,
+		DTruckTotal:     1,
+		DTruckAvailable: 1,
+		DOrderUnhandled: 0,
+	}
+	err, code = adminInfo.AdminInfoUpdate()
+	if err != nil {
+		logging.Info(err)
+		return serializer.Response{
+			Status: code,
+			Msg:    constant.GetMsg(code),
+			Error:  err.Error(),
+		}
+	}
+
 	return serializer.Response{
 		Status: code,
 		Msg:    constant.GetMsg(code),

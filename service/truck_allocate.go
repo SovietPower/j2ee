@@ -84,6 +84,25 @@ func (service *TruckAllocateService) TruckAllocate() serializer.Response {
 		}
 	}
 
+	// 管理员信息更新
+	adminInfo := AdminInfoUpdateService{
+		DMsgNumber:      -1,
+		DOrderTotal:     0,
+		DUserTotal:      0,
+		DTruckTotal:     0,
+		DTruckAvailable: -1,
+		DOrderUnhandled: -1,
+	}
+	err, code = adminInfo.AdminInfoUpdate()
+	if err != nil {
+		logging.Info(err)
+		return serializer.Response{
+			Status: code,
+			Msg:    constant.GetMsg(code),
+			Error:  err.Error(),
+		}
+	}
+
 	return serializer.Response{
 		Status: code,
 		Msg:    constant.GetMsg(code),

@@ -2,9 +2,9 @@ package constant
 
 // MsgFlags 状态码map
 var MsgFlags = map[int]string{
-	SUCCESS:                    "ok",
+	SUCCESS:                    "OK",
 	UPDATE_PASSWORD_SUCCESS:    "修改密码成功",
-	ERROR:                      "fail",
+	ERROR:                      "ERROR",
 	INVALID_PARAMS:             "请求参数错误",
 	ERROR_EXISTED_USER:         "已存在该用户",
 	ERROR_NO_SUCH_USER:         "该用户不存在",
@@ -30,6 +30,8 @@ var MsgFlags = map[int]string{
 	ERROR_UPDATING_INFO: "更新用户信息失败",
 
 	ERROR_OSS: "OSS配置错误",
+
+	ERROR_AMAP_QUERY: "高德地图API请求失败",
 }
 
 // GetMsg 获取状态码对应信息

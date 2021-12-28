@@ -95,6 +95,26 @@ func (service *UserRegisterService) UserRegister() serializer.Response {
 		}
 	}
 
+	// 管理员信息更新
+	adminInfo := AdminInfoUpdateService{
+		DMsgNumber:      0,
+		DOrderTotal:     0,
+		DUserTotal:      1,
+		DTruckTotal:     0,
+		DTruckAvailable: 0,
+		DOrderUnhandled: 0,
+	}
+	var err error
+	err, code = adminInfo.AdminInfoUpdate()
+	if err != nil {
+		logging.Info(err)
+		return serializer.Response{
+			Status: code,
+			Msg:    constant.GetMsg(code),
+			Error:  err.Error(),
+		}
+	}
+
 	// 创建用于展示给管理员的用户信息
 	// adminInfo := AdminUserInfoCreateService{
 	// 	UserID:   user.ID,

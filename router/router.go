@@ -13,7 +13,6 @@ import (
 func NewRouter() *gin.Engine {
 	r := gin.Default()
 
-	// store := cookie.NewStore([]byte("secret_string..."))
 	store := cookie.NewStore([]byte(os.Getenv("SESSION_SECRET")))
 	// store.Options(sessions.Options{HttpOnly: true, MaxAge: 7 * 86400, Path: "/"})
 	r.Use(sessions.Sessions("mysession", store))
@@ -84,6 +83,13 @@ func NewRouter() *gin.Engine {
 			auth2.POST("truck/create", api.TruckCreate)
 			auth2.POST("truck/allocate", api.TruckAllocate)
 		}
+	}
+
+	// sdk
+	v3 := r.Group("/api/v3")
+	{
+		// 获取下级行政区列表
+		v3.GET("amap/districts", api.GetDistricts)
 	}
 
 	// 404 NotFound

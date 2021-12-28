@@ -8,25 +8,26 @@ import (
 )
 
 var jwtSecret = []byte(os.Getenv("JWT_SECRET"))
-// var jwtSecret = []byte("os.Getenv('JWT_SECRET')")
 
 // Claims ...
 type Claims struct {
 	Username  string `json:"username"`
 	Password  string `json:"password"`
+	Status    int    `json:"status"`
 	Authority int    `json:"authority"`
 	jwt.StandardClaims
 }
 
 // GenerateToken 签发用户Token
-func GenerateToken(username, password string, authority int) (string, error) {
+func GenerateToken(username, password string, status, authority int) (string, error) {
 	nowTime := time.Now()
-	expireTime := nowTime.Add(24 * time.Hour)
-	// expireTime := nowTime.Add(time.Minute)
+	// expireTime := nowTime.Add(24 * time.Hour)
+	expireTime := nowTime.Add(5 * time.Minute)
 
 	claims := Claims{
 		username,
 		password,
+		status,
 		authority,
 		jwt.StandardClaims{
 			ExpiresAt: expireTime.Unix(),

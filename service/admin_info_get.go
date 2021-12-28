@@ -9,7 +9,7 @@ import (
 
 // AdminInfoGetService 获取管理员其它信息服务
 type AdminInfoGetService struct {
-	UserID uint `form:"user_id" binding:"required"`
+	// UserID uint `form:"user_id" binding:"required"`
 }
 
 // AdminInfoGet 获取管理员其它信息
@@ -17,7 +17,8 @@ func (service *AdminInfoGetService) AdminInfoGet() serializer.Response {
 	var info model.AdminInfo
 	code := constant.SUCCESS
 
-	err := model.DB.Model(&model.AdminInfo{}).Where("user_id = ?", service.UserID).Find(&info).Error
+	// todo 管理员不需要ID，信息统一
+	err := model.DB.Model(&model.AdminInfo{}).Find(&info).Error
 	if err != nil {
 		logging.Info(err)
 		code = constant.ERROR_DATABASE

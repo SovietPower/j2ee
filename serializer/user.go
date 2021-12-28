@@ -10,7 +10,6 @@ type User struct {
 
 	Status    int `json:"status"`
 	Authority int `json:"authority"` // 用户权限，0：管理员，1：普通用户
-	// Email     string `json:"email"`
 }
 
 // BuildUser 序列化用户。将模型转为前端存储的结构
@@ -22,6 +21,5 @@ func BuildUser(user model.User) User {
 
 		Status:    user.Status,
 		Authority: user.Authority,
-		// Email:     user.Email,
 	}
 }

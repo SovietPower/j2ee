@@ -3,6 +3,7 @@ package config
 import (
 	"j2ee/model"
 	"j2ee/util/logging"
+	"j2ee/util/sdk"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -22,4 +23,6 @@ func Init() {
 	// 连接数据库
 	model.InitDatabase(os.Getenv("MYSQL_DSN"))
 	// model.InitDatabase("")
+
+	sdk.KEY = os.Getenv("AMAP_KEY")
 }

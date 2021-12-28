@@ -1,7 +1,7 @@
 Tag:
-    required: "必须存在，而且不能为空"
-    min: "不够长"
-    max: "太长"
+    required: "必须存在，且不能为空"
+    min: "长度不足"
+    max: "超出限制长度"
 Field:
     Name: "名称"
     Nickname: "用户昵称"

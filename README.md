@@ -15,8 +15,8 @@
 ## 目录结构
 ```
 ├─api 服务调用接口
-├─config
-│  └─locales i18n国际化文件（未使用）
+├─config 配置文件
+│  └─locales i18n国际化文件
 ├─constant 常量及相关信息
 ├─middleware 中间件
 ├─model 数据库模型
@@ -31,7 +31,7 @@
 
 ## 运行
 
-需先创建`.env`文件，填写数据库、密钥等信息，内容格式同`.env.example`。
+需先创建`.env`文件，填写数据库、使用的密钥等信息，内容格式同`.env.example`。
 
 ```
 go mod tidy
